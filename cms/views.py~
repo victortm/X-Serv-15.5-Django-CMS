@@ -15,6 +15,6 @@ def dbMngt(request, resource):
         except Pages.DoesNotExist:
             return HttpResponseNotFound("Page " + resource + " is not available")
     if request.method == "PUT":
-        newPage = Pages(name = resource, page = "Pagina de " + request.body)
+        newPage = Pages(name= resource, page= "Pagina de " + request.body)
         newPage.save()
         return HttpResponse("Page " + request.body + " successfully saved")
